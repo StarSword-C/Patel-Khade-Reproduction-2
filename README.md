@@ -26,17 +26,17 @@ The project uses the [**Oxford Battery Degradation Dataset 1**](https://dx.doi.o
 ---
 
 ## 🧩 Repository Structure
-├── run_oxford_checkpoint2.m          # Main driver script
-├── unwrap_cycle_struct.m             # Unwraps t,v,q,T tables into numeric vectors
-├── find_cell_capacity_ref.m          # Finds per-cell reference capacity (first C1dc)
-├── features_from_C1ch.m              # Extracts time-to-voltage and CC/CV features
-├── soh_from_C1dc.m                   # Computes cycle capacity and SOH
-├── evaluate_features.m               # Fits and evaluates linear regressions
-├── plot_soh_vs_feature.m             # Generates scatter + fit plot (RMSE, R²)
-├── list_cells_and_cycles.m           # Lists cells and available characterization cycles
-├── Oxford_Battery_Degradation_Dataset_1.mat  # Input dataset (not included in repo)
-├── oxford_cp2_metrics.csv            # Output: feature performance metrics
-├── oxford_cp2_tidy.csv               # Output: full dataset (features + SOH)
+├── run_oxford_checkpoint2.m          # Main driver script<br>
+├── unwrap_cycle_struct.m             # Unwraps t,v,q,T tables into numeric vectors<br>
+├── find_cell_capacity_ref.m          # Finds per-cell reference capacity (first C1dc)<br>
+├── features_from_C1ch.m              # Extracts time-to-voltage and CC/CV features<br>
+├── soh_from_C1dc.m                   # Computes cycle capacity and SOH<br>
+├── evaluate_features.m               # Fits and evaluates linear regressions<br>
+├── plot_soh_vs_feature.m             # Generates scatter + fit plot (RMSE, R²)<br>
+├── list_cells_and_cycles.m           # Lists cells and available characterization cycles<br>
+├── Oxford_Battery_Degradation_Dataset_1.mat  # Input dataset (not included in repo)<br>
+├── oxford_cp2_metrics.csv            # Output: feature performance metrics<br>
+├── oxford_cp2_tidy.csv               # Output: full dataset (features + SOH)<br>
 └── oxford_cp2_soh_vs_F5.png          # Example regression plot
 
 
