@@ -56,3 +56,16 @@ The project uses the [**Oxford Battery Degradation Dataset 1**](https://dx.doi.o
    - `oxford_cp2_metrics.csv` — regression performance table
    - `oxford_cp2_tidy.csv` — compiled dataset (meta + features + SOH)
    - `oxford_cp2_soh_vs_<BestFeature>.png` — regression plot for top feature
+
+---
+
+## Feature explanation
+
+| Feature | Description                        | Units   | Physical Meaning                                                                                                                                                   |
+| :------ | :--------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **F₁**  | **Cycle index**                    | —       | Identifier of which charge/discharge cycle is being analyzed (used for tracking degradation trends).                                                               |
+| **F₂**  | **Constant-current (CC) duration** | seconds | Time from the start of charging until voltage first reaches (V_{\max} - 0.05~\mathrm{V}), marking the end of the CC phase. Healthy cells have longer CC durations. |
+| **F₃**  | **Constant-voltage (CV) duration** | seconds | Time from the CC→CV knee to the end of charging; aged cells spend more relative time here because current decays faster.                                           |
+| **F₄**  | **Time to 3.9 V**                  | seconds | Elapsed time from start of charge until the cell reaches 3.9 V.                                                                                                    |
+| **F₅**  | **Time to 4.0 V**                  | seconds | Elapsed time from start of charge until 4.0 V; this typically gives the strongest correlation with SOH.                                                            |
+| **F₆**  | **Time to 4.1 V**                  | seconds | Elapsed time from start of charge until 4.1 V; similar trend as F₅, slightly more affected by noise near the CV knee.                                              |
