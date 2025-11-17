@@ -6,6 +6,7 @@
 clear; clc;
 
 %% ---- Config ----
+download_oxford_dataset(); %% ensure dataset is downloaded
 mat_file = 'Oxford_Battery_Degradation_Dataset_1.mat'; % change if needed
 cap_nominal_mAh = 740;     % Kokam 740 mAh pouch cells (dataset nominal)
 save_prefix = 'oxford_cp2'; % prefix for output files
@@ -134,6 +135,31 @@ exportgraphics(hFig, [save_prefix '_soh_vs_' char(bestFeature) '.png'], 'Resolut
 %% ---- Save a tidy dataset for later analysis ----
 T = [meta, Xtbl, table(Y,'VariableNames',{'SOH_pct'})];
 writetable(T, [save_prefix '_tidy.csv']);
+
+%% ---- Build Combined Table for Regression Learner ----
+% Select features to include as predictors
+predictorNames = {'F1','F2','F3','F4','F5','F6'};
+
+% Extract numeric feature columns
+Predictors = Xtbl(:, predictorNames);
+
+% Optionally add Cell as a categorical predictor
+Predictors.Cell = categorical(meta.Cell);
+
+% Combine predictors and response into one table
+Tbl_ML = [Predictors, table(Y, 'VariableNames', {'SOH_pct'})];
+
+% Remove any rows with missing or infinite data
+Tbl_ML = Tbl_ML(all(isfinite(table2array(Tbl_ML(:, predictorNames))), 2) & isfinite(Tbl_ML.SOH_pct), :);
+
+% Assign to base workspace for Regression Learner
+assignin('base', 'Tbl_ML', Tbl_ML);
+
+% Save for convenience
+writetable(Tbl_ML, [save_prefix '_ml_ready.csv']);
+
+fprintf('Created ML-ready table: %d rows, %d predictors + SOH response.\n', ...
+    height(Tbl_ML), width(Tbl_ML)-1);
 
 fprintf('Done. Outputs:\n  - %s_metrics.csv\n  - %s_soh_vs_%s.png\n  - %s_tidy.csv\n', ...
     save_prefix, save_prefix, char(bestFeature), save_prefix);
