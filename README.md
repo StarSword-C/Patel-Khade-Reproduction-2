@@ -57,6 +57,7 @@ The project uses the [**Oxford Battery Degradation Dataset 1**](https://dx.doi.o
    - `oxford_cp2_metrics.csv` — regression performance table
    - `oxford_cp2_tidy.csv` — compiled dataset (meta + features + SOH)
    - `oxford_cp2_soh_vs_<BestFeature>.png` — regression plot for top feature
+   - `Tbl_ML` — table of outputs in MATLAB workspace suitable for use with MATLAB Regression Learner
 
 ---
 
