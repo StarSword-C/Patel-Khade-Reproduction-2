@@ -27,6 +27,7 @@ The project uses the [**Oxford Battery Degradation Dataset 1**](https://dx.doi.o
 
 ## 🧩 Repository Structure
 ├── run_oxford_checkpoint2.m          # Main driver script<br>
+├── download_oxford_dataset.m         # Automatically downloads the Oxford Battery Degradation Dataset 1 directly from the Bodleian Library repository<br>
 ├── unwrap_cycle_struct.m             # Unwraps t,v,q,T tables into numeric vectors<br>
 ├── find_cell_capacity_ref.m          # Finds per-cell reference capacity (first C1dc)<br>
 ├── features_from_C1ch.m              # Extracts time-to-voltage and CC/CV features<br>
