@@ -46,7 +46,7 @@ The project uses the [**Oxford Battery Degradation Dataset 1**](https://dx.doi.o
 ## 🚀 Usage
 
 1. **Place the dataset**
-   - Download from Oxford DOI link above.  
+   - If not using `download_oxford_dataset.m`, download from Oxford DOI link above.
    - Put `Oxford_Battery_Degradation_Dataset_1.mat` in the repository root.
 
 2. **Run the analysis**
