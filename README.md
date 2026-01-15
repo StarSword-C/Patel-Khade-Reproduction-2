@@ -71,3 +71,9 @@ The project uses the [**Oxford Battery Degradation Dataset 1**](https://dx.doi.o
 | **F₄**  | **Time to 3.9 V**                  | seconds | Elapsed time from start of charge until the cell reaches 3.9 V.                                                                                                    |
 | **F₅**  | **Time to 4.0 V**                  | seconds | Elapsed time from start of charge until 4.0 V; this typically gives the strongest correlation with SOH.                                                            |
 | **F₆**  | **Time to 4.1 V**                  | seconds | Elapsed time from start of charge until 4.1 V; similar trend as F₅, slightly more affected by noise near the CV knee.                                              |
+
+---
+
+## Codegen directory
+
+This directory contains an example bilayered neural network generated using F₂ and F₄-F₆. My original goal for my thesis work revolved around machine learning models that would fit on microcontrollers (particularly a TI C2000 series) that can be used in offline battery management systems.
