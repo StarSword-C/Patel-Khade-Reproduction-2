@@ -1,4 +1,4 @@
-# Battery State-of-Health (SOH) Estimation — Patel & Khade (2021) Reproduction
+# Battery State-of-Health (SOH) Estimation — Patel & Khade (2024) Reproduction
 **Author:** Aaron J. Davis  
 **Course:** ECE 57000 – Artificial Intelligence - Purdue University at West Lafayette
 **Checkpoint 2 (Fall 2025)**
